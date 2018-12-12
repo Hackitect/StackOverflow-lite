@@ -14,3 +14,5 @@ Users can view the answers to questions.
 Users can accept an answer out of all the answers to his/her question as the preferred answer. 
 
 This is a modified readme inside the gh-pages
+
+Am now in ft1-commit, to raise PR to merge to gh-pages
