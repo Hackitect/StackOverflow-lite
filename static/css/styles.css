@@ -1,0 +1,195 @@
+body{
+	margin: 0;
+	padding: 0;
+	color: #ffffff;
+	margin-top: 5rem;
+}
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+
+a{
+	color: #ffffff;
+}
+
+
+input{
+	width: 100%;
+	padding: 12px 20px;
+	margin: 6px 0;
+	display: inline-block;
+	border: 1px solid #000638;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+fieldset{
+	padding: 20px;
+	margin-top: 20px;
+}
+
+legend{
+	border: 1px solid #ffffff;
+	border-radius: 4px;
+	box-sizing: border-box;
+	padding: 10px;
+	background-color: #ffffff;
+	color: #000638;
+}
+
+input[type=submit]{
+	width: 30%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #000638;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+textarea{
+	width: 100%;
+}
+
+.navbar{
+	margin: 0;
+	padding: 0;
+	background-color:rgb(15, 15, 15);
+	padding-bottom: 20px;
+}
+
+/*.navbar_b {
+    grid-column: span 3 / auto;
+    background-color: #2e4250;
+    border-radius: 4px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}*/
+
+.maindiv{
+	margin-top: 30px;
+	padding: 20px;
+	width: 80%;
+	margin-left: 5%;
+	margin-right: 15%
+	
+}
+
+/* Header */
+.top-bar h3 {
+    display: inline;
+    color: #fff;
+}
+
+/* Footer */
+.site-footer{
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 5%;
+        background-color:rgb(15, 15, 15);
+        color: white;
+        text-align: center;
+}
+ table{
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+	border-bottom: 1px solid #000638;
+	background-color: #cccedf;
+	color: #000638;
+}
+
+a td {
+	color: #000638;
+}
+td, th{
+	border: none;
+	text-align: left;
+	padding: 8px;
+	border-bottom: 1px solid #000638;
+
+}
+
+a tr:nth-child(even){
+	background-color: #cccedf
+
+}
+
+th{
+	background-color: #000638;
+	color: #ffffff;
+}
+
+
+ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #000638;
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+li{
+	display: inline;
+	float: right;
+}
+
+li a{
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+li a:hover{
+	background-color: #ffffff;
+	color: #000638;
+}
+
+#submit{
+	background-color: #cccedf;
+}
+
+#submit:hover{
+	background-color: #0d9fe2;
+}
+
+.active{
+	background-color: #cccedf;
+	color:#000638;
+}
+
+
+.title{
+	color: grey;
+	font-size: 18px;
+}
+
+.summary{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	width: 100%;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.collapsible{
+	cursor: pointer;
+}
+
+.content{
+	display: none;
+	overflow: hidden;
+}
+

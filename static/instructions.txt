@@ -1,0 +1,65 @@
+Given a User
+AND User would like to ....
+WHEN User <does something>..
+THEN User should 
+
+Naming convention for features in github
+ft-user-login-id(remove the # and just use number)
+
+
+start git commit -m "[Start#storyid] message"
+
+middle git commit - m "[feature#storyid] message"
+
+finishing git commit -m "[finishes#storyid] message"
+
+C:\python_projects\stackoverflow>git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+
+C:\python_projects\stackoverflow>git push --set-upstream origin master
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 940 bytes | 85.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0)
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/Hackitect/StackOverflow-lite/pull/new/master
+remote:
+To https://github.com/Hackitect/StackOverflow-lite.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+
+
+Create UI templates for the stories
+
+1. Master - push readme.md - from local - done
+2. branch gh-pages modified readme.md - from local
+
+3 branch to ft1-commit local
+
+4. raise a PR FT1 to gh-pages - remote
+
+5. describe your PR - remote
+
+6. merge the PR -remote
+
+7. on local machine checkout to gh-pages
+
+8. Pull from origin gh-pages (gh origin is ahead of my local)
+
+9. Branch to FT2 from gh-pages
+
+10. Repeat from 3 (i.e. start ft2)
+
+11. Branch to ft3 again
+
+all features need to branch off from gh-pages
+
+ch
