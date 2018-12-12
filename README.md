@@ -12,3 +12,5 @@ Users can delete the questions they post.
 Users can post answers.
 Users can view the answers to questions.
 Users can accept an answer out of all the answers to his/her question as the preferred answer. 
+
+This is a modified readme inside the gh-pages
