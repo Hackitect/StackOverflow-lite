@@ -6,19 +6,19 @@
 	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="author" content="Charles Njenga">
 	<meta http-equiv="refresh" content="30">
 </head>
 <body>
-<div class="navbar">
-		<ul>
-			<li style="float: left; color: #ffffff; padding:10px">StackOverflow-Lite</li>
-			<li><a href="login.html" class="active">Login</a></li>
-			
-		</ul>
+	<div class="navbar">
+		<a class="navbar-brand mr-4" href="/">&#9776; StackOverflow-Lite</a>
+		<li><a href="login.html" class="active">Login</a></li>
+		
 	</div>
+
 	<div class="maindiv">
-		<h2>Recently Asked Questions</h2>
+		<h2>Top Questions</h2>
 
 		<h5>Sort By
 			<select>
@@ -26,36 +26,59 @@
 				<option value="Language A-Z">Languages A-Z</option>
 			</select>
 
-			<input type="text" name="Search" placeholder="Search" style="text-align: center; width: 20%; padding: 2px;">
+			<input type="text" name="Search" placeholder="Search" style="text-align: center; width: 40%; padding: 2px;">
 			<button type="submit">Submit</button>
 
 			<a href="#" style="float: right;">Ask A Question</a>
 		</h5>
 
-		<div id="root"></div>
-
-		<h5>Rows 
-			<select>
-				<option value="5">5</option>
-				<option value="10">10</option>
-				<option value="15">15</option>
-			</select> 
-			Page 
-			<select>
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-				<option value="6">6</option>
-				<option value="7">7</option>
-				<option value="8">8</option>
-				<option value="9">9</option>
-				<option value="10">10</option>
-			</select>
-		</h5>  
-
+			   
+    	<div class="center">
+        <small>John Doe - Wednesday December 12th</small>
+        <hr>
+        <h3>How can i call a method for all items in a RecyclerView?</h3>
+        <p>
+                The default item animator only animates when a data is added or removed after the recycler data has been set. I'm new developing applications, and don't have any clue where to start..
+        </p>
+        <i class="fa fa-thumbs-up"></i>
+        <small class="likes">6</small>
+        <i class="fa fa-thumbs-down"></i>
+        <small class="dislikes">1</small>
+        <div class="question"><a href="#">Post Answer</a></div>
+    <!-- </div> -->
 	</div>
-
+		<div class="center">
+        <small>John Doe - Wednesday December 12th</small>
+        <hr>
+        <h3>How can i call a method for all items in a RecyclerView?</h3>
+        <p>
+                The default item animator only animates when a data is added or removed after the recycler data has been set. I'm new developing applications, and don't have any clue where to start..
+        </p>
+        <i class="fa fa-thumbs-up"></i>
+        <small class="likes">6</small>
+        <i class="fa fa-thumbs-down"></i>
+        <small class="dislikes">1</small>
+        <div class="question"><a href="#">Post Answer</a></div>
+        
+        <div class="center">
+        <small>John Doe - Wednesday December 12th</small>
+        <hr>
+        <h3>How can i call a method for all items in a RecyclerView?</h3>
+        <p>
+                The default item animator only animates when a data is added or removed after the recycler data has been set. I'm new developing applications, and don't have any clue where to start..
+        </p>
+        <i class="fa fa-thumbs-up"></i>
+        <small class="likes">6</small>
+        <i class="fa fa-thumbs-down"></i>
+        <small class="dislikes">1</small>
+        <div class="question"><a href="#">Post Answer</a></div>
+        
+        <div class="site-footer">
+        	<div class="container">
+            	<div class="site-copyright">
+                	<p>&copy; 2018 StackOverflow-lite</p>
+            	</div>
+        	</div>
+    	</div>
 </body>
 </html>
