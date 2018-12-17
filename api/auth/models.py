@@ -1,5 +1,4 @@
 
-# import request
 from api.auth.utils import validate_password, validate_username, validate_email
 
 users_list = [

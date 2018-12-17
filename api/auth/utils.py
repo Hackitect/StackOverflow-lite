@@ -71,9 +71,10 @@ def validate_password(password):
   except Exception as e:
         raise e
 
+
 def validate_email(email):
-  if not re.match(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)", email.islower()):
-    Message: "Invalid email address"
+  if not re.search(r'\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b', email, re.I):
+    # Message: "Invalid email address"
     return False
     # abort(400, Message)
   else:
