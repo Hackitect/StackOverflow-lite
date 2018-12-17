@@ -39,6 +39,12 @@ def signup_user():
 		email = request.json['email']
 		timestamp = datetime.datetime.now()
 
+		# id = len(models.users_list) + 1
+		# new_user = {'id': id, 'username': username, 'password': password, 'email': email, "timestamp": timestamp}
+		# models.users_list.append(new_user)
+
+		# return jsonify(new_user)
+
 		return jsonify(user_object.signup(email, username, password, timestamp)), 201
 		
 	

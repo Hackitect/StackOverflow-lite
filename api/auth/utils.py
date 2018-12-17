@@ -44,25 +44,25 @@ def validate_password(password):
   try:
       
     if len(password) <6:
-      message = ("Not valid ! Password should have a minimum of 6 characters")
+      msg = "Not valid ! Password should have a minimum of 6 characters"
       return False
     elif len(password) > 12:
-      message = ("Not valid ! Password Should have maximum of 12 characters")
+      # message = ("Not valid ! Password Should have maximum of 12 characters")
       return False
     elif re.search(r"\s",password): # \s matches any whitespace character
-      message =  ("Not valid ! It should not contain any spaces")
+      # message =  ("Not valid ! It should not contain any spaces")
       return False
     elif not re.search(r"[a-z]",password): #[a-z] will match any lowercase ASCII letter,
-      message =  ("Not valid ! It should contain one lowercase letter between [a-z]")
+      # message =  ("Not valid ! It should contain one lowercase letter between [a-z]")
       return False
     elif not re.search(r"[0-9]",password): # matches any decimal digit
-      message =  ("Not valid ! It should contain at least one number between [0-9]")
+      # message =  ("Not valid ! It should contain at least one number between [0-9]")
       return False
     elif not re.search(r"[A-Z]",password): #[a-z] will match any uppercase ASCII letter,
-      message =  ("Not valid ! It should contain one uppercase letter [a-z]")
+      # message =  ("Not valid ! It should contain one uppercase letter [a-z]")
       return False
     elif not re.search("[$#@]",password): # re.search(pattern, string) - search occurence of pattern in string
-      message =  ("Not valid ! It should contain at least one of the following special characters [$ # @ ]")
+      # message =  ("Not valid ! It should contain at least one of the following special characters [$ # @ ]")
       return False
     else:
       # Message: "Password meets the requirements"

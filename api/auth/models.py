@@ -30,16 +30,16 @@ class Users():
 	def signup(self, email, username, password, timestamp):
 				
 		if validate_password(password) is False:
-			return {"Password does not meet requirements"}
+			return {"message": "password does not meet requirements"}
 		if validate_username(username) is False:
-			return {"Username must be a string of at least 3 characters"}
+			return {"message": "Username must be a string of at least 3 characters"}
 		if validate_email(email) is False:
-			return {"Provide valid email format"}
+			return {"message": "Provide valid email of the correct format"}
 		else: 
 			id = len(users_list) + 1
 			new_user = {'id': id, 'username': username, 'password': password, 'email': email, 'timestamp': timestamp}
 			users_list.append(new_user)
-			return {"New user added with the following details"}
+			return {"message": "New user added with the following details"}
 
 	def get_all(self):
 		if len(users_list) == 0:
