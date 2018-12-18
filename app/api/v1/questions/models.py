@@ -32,7 +32,7 @@ class Questions():
 
 	def post_question(self, user_id, question, timestamp):
 		if len(question) < 5:
-			return {"message": "Try typing a descriptive question"}
+			return {"message": "Question too short, try typing a descriptive question"}
 		
 		id = len(questions_list) + 1
 		new_question = {'id': id, 'user_id': user_id, 'question': question, 'date_posted': timestamp}
