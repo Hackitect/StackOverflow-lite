@@ -44,8 +44,8 @@ def validate_password(password):
   try:
       
     if len(password) <6:
-      msg: "Password should have a minimum of 6 characters"
-      return False
+      return : "Password should have a minimum of 6 characters", False
+      # return False
     elif len(password) > 12:
       # message = ("Not valid ! Password Should have maximum of 12 characters")
       return False

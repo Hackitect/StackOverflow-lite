@@ -30,7 +30,7 @@ class Users():
 	def signup(self, email, username, password, timestamp):
 				
 		if validate_password(password) is False:
-			return {"message": "password does not meet requirements", "reason": msg}
+			return {"message": "password does not meet requirements"}
 		if validate_username(username) is False:
 			return {"message": "Username must be a string of at least 3 characters"}
 		if validate_email(email) is False:
