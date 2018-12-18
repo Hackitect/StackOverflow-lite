@@ -81,3 +81,5 @@ class Users():
 		for user in users_list:
 			if user['username'] == username and user['password'] == password:
 				return {"message": "user {}, logged in successfully".format(username)}
+			else:
+				return {"message": "check your username or password"}
