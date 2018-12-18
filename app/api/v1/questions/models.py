@@ -29,3 +29,13 @@ class Questions:
 			return {"message": "Empty list"}
 		else:
 			return questions_list
+
+	def post_question(self, user_id, question, timestamp):
+		id = len(questions_list) + 1
+		new_question = {'id': id, 'user_id': user_id, 'question': question, 'date_posted': timestamp}
+		questions_list.append(new_question)
+		return {
+			"message": "Your question has been posted successfully",
+			"question": question,
+			"time created": timestamp
+			}
