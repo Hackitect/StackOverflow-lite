@@ -1,5 +1,5 @@
-from app.api.users.utils import validate_password, validate_username, validate_email
-from app.api import create_app, bcrypt
+from app.api.v1.users.utils import validate_password, validate_username, validate_email
+from app import create_app, bcrypt
 
 users_list = [
 	{
