@@ -22,7 +22,7 @@ questions_list = [
 		}
 ]
 
-class Questions:
+class Questions():
 
 	def get_all(self):
 		if len(questions_list) == 0:
