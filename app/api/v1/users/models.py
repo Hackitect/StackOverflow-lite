@@ -74,9 +74,9 @@ class Users():
 		for user in users_list:
 			if user['id'] == user_id:
 				user = {'id': id, 'username': username, 'password': password, 'email': email}
-				return {"The user details have been updated successfully", user}, 200
+				return {"The user details have been updated successfully", user}
 			else:
-				return  {"message": "User not found, no changes made"}, 404
+				return  {"message": "User not found, no changes made"}
 	def login_user(self, username, password):
 		for user in users_list:
 			if user['username'] == username and user['password'] == password:
