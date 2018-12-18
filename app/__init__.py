@@ -14,8 +14,8 @@ def create_app(config_class=Config):
 
 	app.config.from_object(Config)
 	# import Auth and Main Blueprint instances in api folder 
-	from app.api.users.views import auth
-	from app.api.questions.views import questions
+	from app.api.v1.users.views import auth
+	from app.api.v1.questions.views import questions
 	
 	# register the blueprint
 	app.register_blueprint(auth) 
