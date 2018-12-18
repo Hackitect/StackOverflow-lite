@@ -45,7 +45,7 @@ def signup_user():
 
 		# return jsonify(new_user)
 
-		return jsonify(user_object.signup(email, username, password, timestamp)), 201
+		return jsonify(user_object.signup(email, username, password, timestamp))
 
 		
 	
