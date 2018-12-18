@@ -1,27 +1,13 @@
 from flask import Blueprint
+from app.api.v1.questions import models
 import datetime
 
 questions = Blueprint('questions', __name__, url_prefix='/api/v1')
 
 
-questions_list = [
-	{
-		'id': 0,
-		'user_id' 2,
-		'question': 'How can you edit multiple lines using sublime text',
-		'date_posted': ''
-		},
-	{
-		'id': 1,
-		'user_id' 2,
-		'question': 'Recovering evince session in Ubuntu 16.04',
-		'date_posted': ''
-		},
-	{
-		'id': 2,
-		'user_id' 0,
-		'question': 'How to JSON serialize sets?',
-		'date_posted': ''
-		}
-]
+qu_object = models.Questions()
 
+
+@questions.route("/api/v1/auth/questions", methods=['GET'])
+def get_question():
+	return jsonify(qu_object.get_all())
