@@ -35,10 +35,11 @@ class Users():
 			return {"message": "Username must be a string of at least 3 characters"}
 		if validate_email(email) is False:
 			return {"message": "Provide valid email of the correct format"}
-		else: 
+		else:
 			id = len(users_list) + 1
 			hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
-			new_user = {'id': id, 'username': username, 'password': hashed_password, 'email': email, 'timestamp': timestamp}
+			new_user = {'id': id, 'username': username, 'password': hashed_password, 
+						'email': email, 'timestamp': timestamp}
 			users_list.append(new_user)
 			return {
 				"message": "New user added with the following details",
