@@ -1,5 +1,5 @@
-
-
+#for the return specific question, we shall also need all the answers provided soo far
+# hence we need to also have the answers model imported here
 
 questions_list = [
 	{
@@ -42,3 +42,9 @@ class Questions():
 			"question": question,
 			"time created": timestamp
 			}
+	def fetch_specific_question(self, id):
+		for que in questions_list:
+			if que['id'] == id:
+				return {"question" : que['question']}
+
+			return{"message": "no question with that id found in the database"}

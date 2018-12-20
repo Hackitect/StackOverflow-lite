@@ -27,3 +27,9 @@ def post_question():
 		timestamp = datetime.datetime.now()
 
 		return jsonify(qu_object.post_question(user_id, question, timestamp))
+@questions.route("/questions/<int:questionId>", methods=['GET'])
+def fetch_question():
+
+	# we are expecting our json request to have the question id
+	if not request.json or not 'id' in request.json:
+		return jsonify ({"label":"you must be logged in to post a questions"}), 400
