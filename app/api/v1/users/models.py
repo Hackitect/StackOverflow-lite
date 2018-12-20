@@ -1,4 +1,4 @@
-from app.api.v1.users.validators import validate_password, validate_username, validate_email
+from app.api.v1.utils.validators import Validators
 from app import create_app, bcrypt
 
 users_list = [
@@ -25,15 +25,17 @@ users_list = [
 	}
 ]
 
+validate = Validators()
+
 class Users():
 
 	def signup(self, email, username, password, timestamp):
 				
-		if validate_password(password) is False:
+		if validate.is_valid_password(password) is False:
 			return {"message": "password does not meet requirements"}
-		if validate_username(username) is False:
+		if validate.is_valid_username(username) is False:
 			return {"message": "Username must be a string of at least 3 characters"}
-		if validate_email(email) is False:
+		if validate.is_valid_email(email) is False:
 			return {"message": "Provide valid email of the correct format"}
 		else: 
 			id = len(users_list) + 1
@@ -58,8 +60,8 @@ class Users():
 		for user in users_list:
 			if user['id'] == user_id:
 				users_list.remove(user)
-				return {"message": "User has been deleted!!!"}
-				return user
+				return {f"message": "User with id {user.id} has been deleted!!!"}
+				# return user
 			else:
 				return {"message": "No user found with that id"}
 	
@@ -73,7 +75,6 @@ class Users():
 	def update_user_parameters(self, user_id):
 		for user in users_list:
 			if user['id'] == user_id:
-				user = {'id': id, 'username': username, 'password': password, 'email': email}
 				return {"The user details have been updated successfully", user}
 			else:
 				return  {"message": "User not found, no changes made"}
