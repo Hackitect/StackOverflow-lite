@@ -71,7 +71,7 @@ class Users():
 				return user
 			else:
 				return {"message": "No user found with that id"}
-	
+	''' This API is for updating user details, not complete yet  '''
 	def update_user_parameters(self, user_id):
 		for user in users_list:
 			if user['id'] == user_id:

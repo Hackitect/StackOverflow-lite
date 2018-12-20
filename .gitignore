@@ -4,6 +4,9 @@ Thumbs.db
 ehthumbs.db
 ehthumbs_vista.db
 
+# Windows vscode environment
+.vscode/
+
 # Folder config file
 Desktop.ini
 
