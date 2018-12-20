@@ -29,14 +29,14 @@ def delete_user(user_id):
 # api to signup user in the system
 @auth.route("/api/v1/auth/signup", methods=['POST'])
 def signup_user():
+	data = request.get_json()
 	if not request.json or not 'username' in request.json or not 'email' in request.json or not 'password' in request.json:
 		return jsonify ({"label":"username, email and password fields required"}), 400
 	
 	else:
-		
-		username = request.json['username']
-		password = request.json['password']
-		email = request.json['email']
+		username = data('username')
+		password = data.get('password')
+		email = data.get('email')
 		timestamp = datetime.datetime.now()
 
 		# id = len(models.users_list) + 1
@@ -45,24 +45,27 @@ def signup_user():
 
 		# return jsonify(new_user)
 
-		return jsonify(user_object.signup(email, username, password, timestamp))
+		resp =  jsonify(user_object.signup(email, username, password, timestamp))
+		resp.status_code = 201
+		return resp
 
 		
 	
 
 # api to update userdetails with particular id
 @auth.route("/api/v1/auth/update", methods=['PUT'])
-def update_user():	
+def update_user():
+	pass	
 
-	#Check that the request string JSON format, and ID is required
-	if not request.json or not 'id' in request.json:
-		abort(404)
-	else:		
-		id = request.json['id']
-		username = request.json['username']
-		password = request.json['password']
-		email = request.json['email']
-		return jsonify(user_object.update_user_parameters())
+	# #Check that the request string JSON format, and ID is required
+	# if not request.json or not 'id' in request.json:
+	# 	abort(404)
+	# else:		
+	# 	id = request.json['id']
+	# 	username = request.json['username']
+	# 	password = request.json['password']
+	# 	email = request.json['email']
+	# 	return jsonify(user_object.update_user_parameters())
 
 # api to login user
 @auth.route("/api/v1/auth/login", methods=['POST'])
