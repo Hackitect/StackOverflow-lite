@@ -1,5 +1,6 @@
-
-
+#for the return specific question, we shall also need all the answers provided soo far
+# hence we need to also have the answers model imported here
+from app.api.v1.answers import models
 
 questions_list = [
 	{
@@ -22,7 +23,9 @@ questions_list = [
 		}
 ]
 
-class Questions():
+ans = models.answers_list
+
+class Questions:
 
 	def get_all(self):
 		if len(questions_list) == 0:
@@ -42,3 +45,11 @@ class Questions():
 			"question": question,
 			"time created": timestamp
 			}
+	def fetch_specific_question(self, questionId):
+		for que in questions_list:
+			if que['id'] == questionId:
+				for i in ans:
+					if i['Question_id'] == questionId:
+						return {"question": que['question']}, {"answers": ans}
+						
+			return{"message": "no question with that id found in the database"}

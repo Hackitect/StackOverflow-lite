@@ -27,3 +27,6 @@ def post_question():
 		timestamp = datetime.datetime.now()
 
 		return jsonify(qu_object.post_question(user_id, question, timestamp))
+@questions.route("/questions/<int:questionId>", methods=['GET'])
+def fetch_question(questionId):
+	return jsonify(qu_object.fetch_specific_question(questionId))
