@@ -48,8 +48,8 @@ class Questions:
 	def fetch_specific_question(self, questionId):
 		for que in questions_list:
 			if que['id'] == questionId:
-				# for answers in ans:
-				# 	if answers['Question_id'] == id:
-				# 		return answers
-					return {"question" : que['question']}	
+				for i in ans:
+					if i['Question_id'] == questionId:
+						return {"question": que['question']}, {"answers": ans}
+						
 			return{"message": "no question with that id found in the database"}
