@@ -1,5 +1,5 @@
 import os
-from instance.config import Config #import the environment variables (not being user for now)
+from instance.config import app_config #import the environment variables
 from flask import Flask, request, json
 from flask_bcrypt import Bcrypt
 # import psycopg2
@@ -9,10 +9,10 @@ bcrypt = Bcrypt() # encryption function
 # creation of app into a function to create instance of our app with different
 # configurations
 
-def create_app(config_class=Config):
-	app = Flask(__name__)
+def create_app():
+	app = Flask(__name__, instance_relative_config=True)
 
-	app.config.from_object(Config)
+	app.config.from_object(app_config['development'])
 	# import Auth and Main Blueprint instances in api folder 
 	from app.api.v1.users.views import auth
 	from app.api.v1.questions.views import questions

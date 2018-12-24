@@ -28,8 +28,14 @@ def post_question():
 
 		return jsonify(qu_object.post_question(user_id, question, timestamp))
 
+
 @questions.route("/questions/<int:questionId>", methods=['DELETE'])
 def del_question(questionId):
 	# if not request.json or not 'questionId' in request.json:
 	# 	return jsonify ({"label":"you must be logged on and enter questionId"})
 	return jsonify(qu_object.delete_question(questionId))
+
+@questions.route("/questions/<int:questionId>", methods=['GET'])
+def fetch_question(questionId):
+	return jsonify(qu_object.fetch_specific_question(questionId))
+
