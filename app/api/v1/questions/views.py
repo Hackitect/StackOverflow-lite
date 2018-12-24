@@ -30,7 +30,6 @@ def post_question():
 
 @questions.route("/questions/<int:questionId>", methods=['DELETE'])
 def del_question(questionId):
-	if not request.json or not 'questionId' in request.json:
-		return jsonify ({"label":"you must be logged on and enter questionId"})
-	else:
-		return jsonify(qu_object.delete_question(questionId))
+	# if not request.json or not 'questionId' in request.json:
+	# 	return jsonify ({"label":"you must be logged on and enter questionId"})
+	return jsonify(qu_object.delete_question(questionId))

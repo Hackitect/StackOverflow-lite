@@ -49,4 +49,4 @@ class Questions():
 			for que in questions_list:
 				if que['id'] == questionId:
 					questions_list.remove(que)
-					return {f"message": "your question with {questionId} has been deleted!!!"}
+					return {"message": "your question {}, has been deleted!!!".format(que['question'])}
