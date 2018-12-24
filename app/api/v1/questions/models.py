@@ -42,3 +42,11 @@ class Questions():
 			"question": question,
 			"time created": timestamp
 			}
+	def delete_question(self, questionId):
+		if len(questions_list) == 0:
+			return {"message": "Empty list"}
+		else:
+			for que in questions_list:
+				if que['id'] == questionId:
+					questions_list.remove(que)
+					return {f"message": "your question with {questionId} has been deleted!!!"}
