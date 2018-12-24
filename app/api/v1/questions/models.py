@@ -45,6 +45,16 @@ class Questions:
 			"question": question,
 			"time created": timestamp
 			}
+
+	def delete_question(self, questionId):
+		if len(questions_list) == 0:
+			return {"message": "Empty list"}
+		else:
+			for que in questions_list:
+				if que['id'] == questionId:
+					questions_list.remove(que)
+					return {"message": "your question {}, has been deleted!!!".format(que['question'])}
+
 	def fetch_specific_question(self, questionId):
 		for que in questions_list:
 			if que['id'] == questionId:
@@ -53,3 +63,4 @@ class Questions:
 						return {"question": que['question']}, {"answers": ans}
 						
 			return{"message": "no question with that id found in the database"}
+
