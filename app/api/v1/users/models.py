@@ -66,7 +66,7 @@ class Users():
 		for user in users_list:
 			if user['id'] == user_id:
 				users_list.remove(user)
-				return {f"message": "User with id {user.id} has been deleted!!!"}
+				return {"message": "User with id {} has been deleted!!!".format(user_id)}
 				# return user
 			else:
 				return {"message": "No user found with that id"}
