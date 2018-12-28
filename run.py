@@ -1,3 +1,4 @@
+#Import the create_app function from from app module
 from app import create_app
 
 app =  create_app()
