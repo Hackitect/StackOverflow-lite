@@ -34,7 +34,7 @@ def signup_user():
 		return jsonify ({"label":"username, email and password fields required"}), 400
 	
 	else:
-		username = data('username')
+		username = data.get('username')
 		password = data.get('password')
 		email = data.get('email')
 		timestamp = datetime.datetime.now()
@@ -46,7 +46,7 @@ def signup_user():
 		# return jsonify(new_user)
 
 		resp =  jsonify(user_object.signup(email, username, password, timestamp))
-		resp.status_code = 201
+		# resp.status_code = 201
 		return resp
 
 		

@@ -1,5 +1,6 @@
 from app.api.v1.utils.validators import Validators
 from app import create_app, bcrypt
+from flask import jsonify
 
 users_list = [
 	{
@@ -39,6 +40,10 @@ class Users():
 			return {"message": "Provide valid email of the correct format"}
 		else:
 			id = len(users_list) + 1
+			# username = data('username')
+			# password = data.get('password')
+			# email = data.get('email')
+			# timestamp = datetime.datetime.now()
 			hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
 			new_user = {'id': id, 'username': username, 'password': hashed_password, 
 						'email': email, 'timestamp': timestamp}

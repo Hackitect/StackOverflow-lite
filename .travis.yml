@@ -1,1 +1,7 @@
-ECHO is on.
+sudo: false
+
+language: python
+
+python:
+  - 3.7.1
+script: make test

@@ -36,8 +36,8 @@ class Validators():
     try:
         
       if len(password) <6:
-        return "Password should have a minimum of 6 characters", False
-        # return False
+        # return "Password should have a minimum of 6 characters", False
+        return False
       elif len(password) > 12:
         # message = ("Not valid ! Password Should have maximum of 12 characters")
         return False
