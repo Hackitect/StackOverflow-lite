@@ -1,6 +1,8 @@
 # Andela Pre BootCAMP
 # StackOverflow-Lite App
 
+[![Build Status](https://travis-ci.org/Hackitect/StackOverflow-lite.svg?branch=develop)](https://travis-ci.org/Hackitect/StackOverflow-lite)
+
 **Project Overview**
 StackOverflow-lite is a platform where people can ask questions and provide answers. 
 
