@@ -1,6 +1,7 @@
 #for the return specific question, we shall also need all the answers provided soo far
 # hence we need to also have the answers model imported here
 from app.api.v1.answers import models
+import datetime
 
 questions_list = [
 	{
@@ -64,14 +65,11 @@ class Questions:
 						
 			return{"message": "no question with that id found in the database"}
 
-	def post_answer(self, questionId):
-		data = request.get_json()
+	def post_answer(self, questionId, userId):
 		for que in questions_list:
 			if que['id'] == questionId:
 				id = len(ans)+1
-				userId = data['userId']
-				answer = data['answer']
 				date_posted = datetime.datetime.now()
 				new_answer = {"id": id, "user_id": userId, "questionId": questionId, "answer": answer, "date_posted": date_posted}
 				ans.append(new_answer)
-				return jsonify({"message": "Your answer has been posted"})
+				return {"message": "Your answer has been posted"}

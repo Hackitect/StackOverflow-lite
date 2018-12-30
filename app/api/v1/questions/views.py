@@ -41,5 +41,8 @@ def fetch_question(questionId):
 
 @questions.route("/questions/<questionId>/answers", methods=['POST'])
 def post_answer(questionId):
-	return jsonify(qu_object.post_answer(questionId))
+	data = request.get_json
+	userId = data['userId']
+	answer = data['answer']
+	return jsonify(qu_object.post_answer(questionId, userId, answer))
 
