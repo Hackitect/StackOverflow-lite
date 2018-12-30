@@ -73,3 +73,4 @@ class Questions:
 				new_answer = {"id": id, "user_id": userId, "questionId": questionId, "answer": answer, "date_posted": date_posted}
 				ans.append(new_answer)
 				return {"message": "Your answer has been posted"}
+			return {"message" : "Question not found"}, 404
