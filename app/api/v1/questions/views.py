@@ -40,8 +40,12 @@ def fetch_question(questionId):
 	return jsonify(qu_object.fetch_specific_question(questionId))
 
 @questions.route("/questions/<questionId>/answers", methods=['POST'])
-def post_answer(questionId):
+def post_answer(questionId, answer):
 	data = request.get_json
+	if data['userId'] == "":
+		return {"message": "You must be logged in to post an Answer"}
+	elif data['answer'] == "":
+		return {"message": "You must type and answer before clicking post"}
 	userId = data['userId']
 	answer = data['answer']
 	return jsonify(qu_object.post_answer(questionId, userId, answer))
