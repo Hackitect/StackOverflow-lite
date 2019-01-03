@@ -21,3 +21,16 @@ answers_list = [
 		'date_posted': '2018, 12, 17, 8, 24, 43, 312403'
 		}
 ]
+
+class Answers:
+	def accept_answer(self, text):
+		pass
+	def update_answer(self, text):
+		for ans in answers_list:
+			if ans['id'] == answerID:
+				id = id
+				user_id = user_id
+				Question_id = question_id
+				answer = text
+				update_answer = {id: id, user_id: user_id, Question_id: Question_id, answer: answer}
+				return update_answer

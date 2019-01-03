@@ -1,6 +1,10 @@
 from app.api.v1.utils.validators import Validators
 from app import create_app, bcrypt
 from flask import jsonify
+from flask_jwt_extended import (create_access_token,
+								create_refresh_token, jwt_required,
+								jwt_refresh_token_required, get_jwt_identity,
+								get_raw_jwt)
 
 users_list = [
 	{
@@ -44,6 +48,9 @@ class Users():
 			# password = data.get('password')
 			# email = data.get('email')
 			# timestamp = datetime.datetime.now()
+			# return the tokens in case of successful registration or login:
+			access_token = create_access_token(identity='username')
+			refresh_token = create_refresh_token(identity='username')
 			hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
 			new_user = {'id': id, 'username': username, 'password': hashed_password, 
 						'email': email, 'timestamp': timestamp}
@@ -52,7 +59,9 @@ class Users():
 				"message": "New user added with the following details",
 				"User created": username,
 				"Encrypted password": hashed_password,
-				"time created": timestamp
+				"time created": timestamp,
+				"Access token": access_token,
+				"refresh token": refresh_token
 				}
 
 
@@ -86,7 +95,13 @@ class Users():
 				return  {"message": "User not found, no changes made"}
 	def login_user(self, username, password):
 		for user in users_list:
-			if user['username'] == username and user['password'] == password:
-				return {"message": "user {}, logged in successfully".format(username)}
+			# compare encrypted password with password has 
+			# bcrypt.check_password_hash(user.password, form.password.data)
+			if user['username'] == username and bcrypt.check_password_hash(user['password'], password) == True:
+				access_token = create_access_token(identity='username')
+				refresh_token = create_refresh_token(identity='username')
+				return {"message": "user {}, logged in successfully".format(username),
+						"access_token": access_token,
+						"refresh_token": refresh_token}
 			else:
 				return {"message": "check your username or password"}

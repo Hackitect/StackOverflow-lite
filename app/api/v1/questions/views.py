@@ -1,16 +1,28 @@
 from flask import Blueprint, jsonify, request
-from app.api.v1.questions import models
+from app.api.v1.questions import models as QueModels
+from app.api.v1.answers import models as AnsModels
 import datetime
+from flask_jwt_extended import (create_access_token,
+								create_refresh_token, jwt_required,
+								jwt_refresh_token_required, get_jwt_identity,
+								get_raw_jwt)
 
 questions = Blueprint('questions', __name__, url_prefix='/api/v1')
 
 
-qu_object = models.Questions()
+qu_object = QueModels.Questions()
+ans_object = AnsModels.Answers()
 
 
 @questions.route("/questions", methods=['GET'])
 def get_question():
 	return jsonify(qu_object.get_all())
+
+@questions.route("/questions/<questionId>/answer/<answerID>", methods=['PUT'])
+def accept_update_answer(questionID, answerID, text):
+	data = request.get_json()
+	text = data['text']
+	# return jsonify(ans_object.accept_answer(text))
 
 @questions.route("/questions", methods=['POST'])
 def post_question():
@@ -40,8 +52,9 @@ def fetch_question(questionId):
 	return jsonify(qu_object.fetch_specific_question(questionId))
 
 @questions.route("/questions/<questionId>/answers", methods=['POST'])
+@jwt_required
 def post_answer(questionId, answer):
-	data = request.get_json
+	data = request.get_json()
 	if data['userId'] == "":
 		return {"message": "You must be logged in to post an Answer"}
 	elif data['answer'] == "":
