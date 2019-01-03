@@ -2,6 +2,10 @@ from flask import Blueprint, jsonify, request
 from app.api.v1.questions import models as QueModels
 from app.api.v1.answers import models as AnsModels
 import datetime
+from flask_jwt_extended import (create_access_token,
+								create_refresh_token, jwt_required,
+								jwt_refresh_token_required, get_jwt_identity,
+								get_raw_jwt)
 
 questions = Blueprint('questions', __name__, url_prefix='/api/v1')
 
@@ -48,6 +52,7 @@ def fetch_question(questionId):
 	return jsonify(qu_object.fetch_specific_question(questionId))
 
 @questions.route("/questions/<questionId>/answers", methods=['POST'])
+@jwt_required
 def post_answer(questionId, answer):
 	data = request.get_json()
 	if data['userId'] == "":
