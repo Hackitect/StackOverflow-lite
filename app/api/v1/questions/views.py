@@ -16,7 +16,7 @@ def get_question():
 
 @questions.route("/questions/<questionId>/answer/<answerID>", methods=['PUT'])
 def accept_update_answer(questionID, answerID, text):
-	data = request.get_json
+	data = request.get_json()
 	text = data['text']
 	return jsonify(ans_object.accept_answer(text))
 
@@ -49,7 +49,7 @@ def fetch_question(questionId):
 
 @questions.route("/questions/<questionId>/answers", methods=['POST'])
 def post_answer(questionId, answer):
-	data = request.get_json
+	data = request.get_json()
 	if data['userId'] == "":
 		return {"message": "You must be logged in to post an Answer"}
 	elif data['answer'] == "":
