@@ -48,6 +48,8 @@ class Users():
 			# password = data.get('password')
 			# email = data.get('email')
 			# timestamp = datetime.datetime.now()
+			# return the tokens in case of successful registration or login:
+			access_token = create_access_token(identity='username')
 			hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
 			new_user = {'id': id, 'username': username, 'password': hashed_password, 
 						'email': email, 'timestamp': timestamp}
@@ -56,7 +58,8 @@ class Users():
 				"message": "New user added with the following details",
 				"User created": username,
 				"Encrypted password": hashed_password,
-				"time created": timestamp
+				"time created": timestamp,
+				"Access token": access_token
 				}
 
 

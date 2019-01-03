@@ -18,7 +18,7 @@ def get_question():
 def accept_update_answer(questionID, answerID, text):
 	data = request.get_json()
 	text = data['text']
-	return jsonify(ans_object.accept_answer(text))
+	# return jsonify(ans_object.accept_answer(text))
 
 @questions.route("/questions", methods=['POST'])
 def post_question():

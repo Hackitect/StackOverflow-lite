@@ -15,8 +15,12 @@ def create_app():
 	# if test_config is None:
 	# 	# load the instance config, if it exists, when not testing
 	# 	app.config.from_pyfile('config.py', silent=True)
-	# import Auth and Main Blueprint instances in api folder 
-	app_config['JWT-SECRET-KEY'] = ''
+	# import Auth and Main Blueprint instances in api folder
+
+
+	# to get big random characters, start python interpreter, import secrets module, then 
+	# use secrets.token_hex() method and pass in 24bytes to genrate a random string 
+	app.config['JWT_SECRET_KEY'] = '9a231f01574449fd12a4f4dcde53abb3a3d384cdb0367086'
 	from app.api.v1.users.views import auth
 	from app.api.v1.questions.views import questions
 		
