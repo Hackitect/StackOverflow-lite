@@ -1,0 +1,19 @@
+sudo: required
+
+dist: xenial
+
+language: python
+
+python:
+  - "3.5"
+script: pytest
+
+virtualenv:
+  system_site_packages: true
+
+install:
+- pip install -r requirements.txt
+
+# once our tests have run, we need to make sure we are back in 
+# the root directory of our project for deployment.
+after_script: cd ~
