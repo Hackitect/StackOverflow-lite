@@ -93,7 +93,9 @@ class Users():
 				return  {"message": "User not found, no changes made"}
 	def login_user(self, username, password):
 		for user in users_list:
-			if user['username'] == username and user['password'] == password:
+			# compare encrypted password with password has 
+			# bcrypt.check_password_hash(user.password, form.password.data)
+			if user['username'] == username and bcrypt.check_password_hash(user['password'], password)
 				return {"message": "user {}, logged in successfully".format(username)}
 			else:
 				return {"message": "check your username or password"}
