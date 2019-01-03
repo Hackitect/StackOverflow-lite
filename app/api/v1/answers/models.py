@@ -21,3 +21,9 @@ answers_list = [
 		'date_posted': '2018, 12, 17, 8, 24, 43, 312403'
 		}
 ]
+
+class Answers:
+	def accept_answer(self, text):
+		pass
+	def update_answer(self, text):
+		pass
