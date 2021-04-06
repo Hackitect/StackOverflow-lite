@@ -21,10 +21,11 @@ Maximum length of transaction password: 12
 Author: Charles M. Njenga
 
 """
+Password = ''
 
 def login_params(self, username, password):
   if username == None or Password == None:
-    message = "Username or password required"
+    # message = "Username or password required"
     return False
   else:
     return True
